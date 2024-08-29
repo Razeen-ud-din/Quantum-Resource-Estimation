@@ -4,11 +4,11 @@ Value = TypeVar("Value")
 
 class List(Generic[Value]):
 	"""
-	Represents a singly linked list.
+	A generic singly linked list.
 	"""
 	class Node:
 		"""
-		Represents a node in a linked list.
+		A node in a linked list.
 		"""
 		def __init__(self, value: Value, next: Optional["List.Node"] = None):
 			self.value = value
