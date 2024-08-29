@@ -1,6 +1,9 @@
 # macOS metadata file
 *.DS_Store
 
+# CPython cache directory
+__pycache__/
+
 # mypy chache directory
 .mypy_cache/
 
