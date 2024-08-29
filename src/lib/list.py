@@ -3,7 +3,13 @@ from typing import Optional, Generic, TypeVar
 Value = TypeVar("Value")
 
 class List(Generic[Value]):
+	"""
+	Represents a singly linked list.
+	"""
 	class Node:
+		"""
+		Represents a node in a linked list.
+		"""
 		def __init__(self, value: Value, next: Optional["List.Node"] = None):
 			self.value = value
 			self.next = next
@@ -21,3 +27,10 @@ class List(Generic[Value]):
 
 	def __repr__(self) -> str:
 		return f"List({self.head})"
+
+	@property
+	def is_empty(self) -> bool:
+		"""
+		Whether the list is empty.
+		"""
+		return self.head is None
