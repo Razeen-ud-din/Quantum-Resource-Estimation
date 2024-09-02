@@ -182,3 +182,22 @@ class List:
 
 	def __repr__(self) -> str:
 		return f"List({self.head})"
+
+	def __str__(self) -> str:
+		if self.is_empty:
+			return "╭─ ─ ─ ─╮\n│ ᴇᴍᴘᴛʏ │\n╰─ ─ ─ ─╯"
+
+		top = ""
+		middle = ""
+		bottom = ""
+		current = self.head
+		assert current is not None, "not self.is_empty ⇒ self.head is not None"
+
+		while current is not None:
+			[current_top, current_middle, current_bottom] = str(current).split("\n")
+			top += current_top
+			middle += current_middle
+			bottom += current_bottom
+			current = current.next
+
+		return f"{top}\n{middle}\n{bottom}"
